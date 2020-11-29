@@ -29,18 +29,9 @@ class calcWindow(Tk):
 
         self.style.configure('Content.TLabel')
 
-        # self.label_username = Label(self.content_frame, text = "Username: ", style = 'Content.TLabel')
-        # self.label_username.grid(row= 0, column = 0)
-        #
-        # self.label_password = Label(self.content_frame, text = "Password: ")
-        # self.label_password.grid(row = 1, column = 0)
-        #
-        # self.username = Entry(self.content_frame, width = 30)
-        # self.username.grid(row = 0, column = 1, pady=10, columnspan = 2)
-        # self.username.focus()
-        #
-        # self.password = Entry(self.content_frame, width = 30, show = "*")
-        # self.password.grid(row = 1, column = 1, pady=10, columnspan = 2)
+        self.username = Entry(self.content_frame, width = 30)
+        self.username.grid(row = 0, column = 0, pady=10, columnspan = 3)
+        self.username.focus()
 
         def add_click():
             return
