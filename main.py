@@ -34,19 +34,53 @@ class calcWindow(Tk):
         self.calculation.focus()
 
         def add_click():
-            return
+            first_number = self.calculation.get()
+            global f_num
+            f_num = int(first_number)
+            global math
+            math = 'addition'
+
+            self.calculation.delete(0, END)
 
         def sub_click():
-            return
+            first_number = self.calculation.get()
+            global f_num
+            f_num = int(first_number)
+            global math
+            math = 'subtraction'
+
+            self.calculation.delete(0, END)
 
         def mult_click():
-            return
+            first_number = self.calculation.get()
+            global f_num
+            f_num = int(first_number)
+            global math
+            math = 'multiplication'
+
+            self.calculation.delete(0, END)
 
         def divide_click():
-            return
+            first_number = self.calculation.get()
+            global f_num
+            f_num = int(first_number)
+            global math
+            math = 'division'
+
+            self.calculation.delete(0, END)
 
         def equal_click():
-            return
+            second_number = self.calculation.get()
+            self.calculation.delete(0, END)
+
+            if math=='addition':
+                self.calculation.insert(0, f_num + int(second_number))
+            if math=='subtraction':
+                self.calculation.insert(0, f_num - int(second_number))
+            if math=='multiplication':
+                self.calculation.insert(0, f_num * int(second_number))
+            if math=='division':
+                self.calculation.insert(0, f_num / int(second_number))
 
         def clear_click():
             self.calculation.delete(0, END)
