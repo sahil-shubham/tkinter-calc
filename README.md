@@ -1,5 +1,5 @@
 # tkinter Calculator
-TThis is a simple GUI calculator made using python library called tkinter. 
+This is a simple GUI calculator made using python library called tkinter. 
 
 ## Motivation
 This was one of the tasks for 'Patel Hall Software Team'. This project is just to re-familiarize myself with python tkinter library.
