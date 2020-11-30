@@ -29,48 +29,83 @@ class calcWindow(Tk):
 
         self.style.configure('Content.TLabel')
 
-        self.username = Entry(self.content_frame, width = 30)
-        self.username.grid(row = 0, column = 0, pady=10, columnspan = 3)
-        self.username.focus()
+        self.calculation = Entry(self.content_frame, width = 40)
+        self.calculation.grid(row = 0, column = 0, pady=10, columnspan = 4)
+        self.calculation.focus()
 
         def add_click():
             return
 
-        def number_click():
+        def sub_click():
             return
 
-        # self.add_button = Button(self.content_frame,text = "+", command = add_click)
-        # self.add_button.grid(row = 2, column = 1, columnspan = 1)
+        def mult_click():
+            return
 
-        self.button_0 = Button(self.content_frame,text = "0", command = number_click)
-        self.button_0.grid(row = 4, column = 0, columnspan = 1)
+        def divide_click():
+            return
 
-        self.button_1 = Button(self.content_frame,text = "1", command = number_click)
+        def equal_click():
+            return
+
+        def clear_click():
+            self.calculation.delete(0, END)
+
+        def number_click(number):
+            current = self.calculation.get()
+            self.calculation.delete(0, END)
+            self.calculation.insert(0, str(current) + str(number))
+
+        self.button_0 = Button(self.content_frame,text = "0", command = lambda: number_click(0))
+        self.button_0.grid(row = 4, column = 1, columnspan = 1)
+
+        self.button_1 = Button(self.content_frame,text = "1", command = lambda: number_click(1))
         self.button_1.grid(row = 3, column = 0, columnspan = 1)
 
-        self.button_2 = Button(self.content_frame,text = "2", command = number_click)
+        self.button_2 = Button(self.content_frame,text = "2", command = lambda: number_click(2))
         self.button_2.grid(row = 3, column = 1, columnspan = 1)
 
-        self.button_3 = Button(self.content_frame,text = "3", command = number_click)
+        self.button_3 = Button(self.content_frame,text = "3", command = lambda: number_click(3))
         self.button_3.grid(row = 3, column = 2, columnspan = 1)
 
-        self.button_4 = Button(self.content_frame,text = "4", command = number_click)
+        self.button_4 = Button(self.content_frame,text = "4", command = lambda: number_click(4))
         self.button_4.grid(row = 2, column = 0, columnspan = 1)
 
-        self.button_5 = Button(self.content_frame,text = "5", command = number_click)
+        self.button_5 = Button(self.content_frame,text = "5", command = lambda: number_click(5))
         self.button_5.grid(row = 2, column = 1, columnspan = 1)
 
-        self.button_6 = Button(self.content_frame,text = "6", command = number_click)
+        self.button_6 = Button(self.content_frame,text = "6", command = lambda: number_click(6))
         self.button_6.grid(row = 2, column = 2, columnspan = 1)
 
-        self.button_7 = Button(self.content_frame,text = "7", command = number_click)
+        self.button_7 = Button(self.content_frame,text = "7", command = lambda: number_click(7))
         self.button_7.grid(row = 1, column = 0, columnspan = 1)
 
-        self.button_8 = Button(self.content_frame,text = "8", command = number_click)
+        self.button_8 = Button(self.content_frame,text = "8", command = lambda: number_click(8))
         self.button_8.grid(row = 1, column = 1, columnspan = 1)
 
-        self.button_9 = Button(self.content_frame,text = "9", command = number_click)
+        self.button_9 = Button(self.content_frame,text = "9", command = lambda: number_click(9))
         self.button_9.grid(row = 1, column = 2, columnspan = 1)
+
+
+        self.add_button = Button(self.content_frame,text = "+", command = add_click)
+        self.add_button.grid(row = 1, column = 3, columnspan = 1)
+
+        self.add_button = Button(self.content_frame,text = "-", command = sub_click)
+        self.add_button.grid(row = 2, column = 3, columnspan = 1)
+
+        self.add_button = Button(self.content_frame,text = "*", command = mult_click)
+        self.add_button.grid(row = 3, column = 3, columnspan = 1)
+
+        self.add_button = Button(self.content_frame,text = "/", command = divide_click)
+        self.add_button.grid(row = 4, column = 3, columnspan = 1)
+
+        self.equal_button = Button(self.content_frame,text = "=", command = equal_click)
+        self.equal_button.grid(row = 4, column = 2, columnspan = 1)
+
+        self.clear_button = Button(self.content_frame,text = "Clear", command = clear_click)
+        self.clear_button.grid(row = 4, column = 0, columnspan = 1)
+
+
 
 if __name__ == "__main__":
     lw = calcWindow()
